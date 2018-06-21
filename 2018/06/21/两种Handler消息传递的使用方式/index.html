@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="两种 Handler 消息传递的使用方式WHATHandler 是 Android 的一种消息传递机制( 异步通信 ) WHEN在多线程中进行耗时操作将获取到的信息传递给主线程( 即 UI 线程 )场景中, 使用 Handler 进行线程间的通信完成对 UI 线程的 UI 更新 WHYHandler 的工作机制在多个线程并发更新 UI 时保证了线程安全 HOWactivity_main.xml12">
+    <meta name="description" content="WHATHandler 是 Android 的一种消息传递机制( 异步通信 ) WHEN在多线程中进行耗时操作将获取到的信息传递给主线程( 即 UI 线程 )场景中, 使用 Handler 进行线程间的通信完成对 UI 线程的 UI 更新 WHYHandler 的工作机制在多个线程并发更新 UI 时保证了线程安全 HOWactivity_main.xml1234&amp;lt;TextView andro">
 <meta name="keywords" content="Android,Handler">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两种Handler消息传递的使用方式">
+<meta property="og:title" content="两种 Handler 消息传递的使用方式">
 <meta property="og:url" content="http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/index.html">
 <meta property="og:site_name" content="Fe2Cu">
-<meta property="og:description" content="两种 Handler 消息传递的使用方式WHATHandler 是 Android 的一种消息传递机制( 异步通信 ) WHEN在多线程中进行耗时操作将获取到的信息传递给主线程( 即 UI 线程 )场景中, 使用 Handler 进行线程间的通信完成对 UI 线程的 UI 更新 WHYHandler 的工作机制在多个线程并发更新 UI 时保证了线程安全 HOWactivity_main.xml12">
+<meta property="og:description" content="WHATHandler 是 Android 的一种消息传递机制( 异步通信 ) WHEN在多线程中进行耗时操作将获取到的信息传递给主线程( 即 UI 线程 )场景中, 使用 Handler 进行线程间的通信完成对 UI 线程的 UI 更新 WHYHandler 的工作机制在多个线程并发更新 UI 时保证了线程安全 HOWactivity_main.xml1234&amp;lt;TextView andro">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-21T11:25:27.299Z">
+<meta property="og:updated_time" content="2018-06-21T13:48:44.230Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="两种Handler消息传递的使用方式">
-<meta name="twitter:description" content="两种 Handler 消息传递的使用方式WHATHandler 是 Android 的一种消息传递机制( 异步通信 ) WHEN在多线程中进行耗时操作将获取到的信息传递给主线程( 即 UI 线程 )场景中, 使用 Handler 进行线程间的通信完成对 UI 线程的 UI 更新 WHYHandler 的工作机制在多个线程并发更新 UI 时保证了线程安全 HOWactivity_main.xml12">
+<meta name="twitter:title" content="两种 Handler 消息传递的使用方式">
+<meta name="twitter:description" content="WHATHandler 是 Android 的一种消息传递机制( 异步通信 ) WHEN在多线程中进行耗时操作将获取到的信息传递给主线程( 即 UI 线程 )场景中, 使用 Handler 进行线程间的通信完成对 UI 线程的 UI 更新 WHYHandler 的工作机制在多个线程并发更新 UI 时保证了线程安全 HOWactivity_main.xml1234&amp;lt;TextView andro">
     
     
         
@@ -37,7 +37,7 @@
         
     
     <!-- title -->
-    <title>两种Handler消息传递的使用方式</title>
+    <title>两种 Handler 消息传递的使用方式</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -88,20 +88,20 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&text=两种Handler消息传递的使用方式"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种Handler消息传递的使用方式"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&is_video=false&description=两种Handler消息传递的使用方式"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=两种Handler消息传递的使用方式&body=Check out this article: http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种Handler消息传递的使用方式"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种Handler消息传递的使用方式"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种Handler消息传递的使用方式"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种Handler消息传递的使用方式"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&name=两种Handler消息传递的使用方式&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&text=两种 Handler 消息传递的使用方式"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&is_video=false&description=两种 Handler 消息传递的使用方式"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=两种 Handler 消息传递的使用方式&body=Check out this article: http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&name=两种 Handler 消息传递的使用方式&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#两种-Handler-消息传递的使用方式"><span class="toc-number">1.</span> <span class="toc-text">两种 Handler 消息传递的使用方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-number">1.1.</span> <span class="toc-text">WHAT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHEN"><span class="toc-number">1.2.</span> <span class="toc-text">WHEN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHY"><span class="toc-number">1.3.</span> <span class="toc-text">WHY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOW"><span class="toc-number">1.4.</span> <span class="toc-text">HOW</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Handler-sendMessage"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. Handler.sendMessage()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Handler-post"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. Handler.post()</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-number">1.</span> <span class="toc-text">WHAT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHEN"><span class="toc-number">2.</span> <span class="toc-text">WHEN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHY"><span class="toc-number">3.</span> <span class="toc-text">WHY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOW"><span class="toc-number">4.</span> <span class="toc-text">HOW</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Handler-sendMessage"><span class="toc-number">4.1.</span> <span class="toc-text">1. Handler.sendMessage()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Handler-post"><span class="toc-number">4.2.</span> <span class="toc-text">2. Handler.post()</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -113,7 +113,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        两种Handler消息传递的使用方式
+        两种 Handler 消息传递的使用方式
     </h1>
 
 
@@ -140,7 +140,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="两种-Handler-消息传递的使用方式"><a href="#两种-Handler-消息传递的使用方式" class="headerlink" title="两种 Handler 消息传递的使用方式"></a>两种 Handler 消息传递的使用方式</h1><h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT"></a>WHAT</h2><p>Handler 是 <code>Android</code> 的一种消息传递机制( 异步通信 )</p>
+    <h2 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT"></a>WHAT</h2><p>Handler 是 <code>Android</code> 的一种消息传递机制( 异步通信 )</p>
 <h2 id="WHEN"><a href="#WHEN" class="headerlink" title="WHEN"></a>WHEN</h2><p>在多线程中进行耗时操作将获取到的信息传递给主线程( 即 UI 线程 )场景中, 使用 Handler 进行线程间的通信完成对 UI 线程的 UI 更新</p>
 <h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><p>Handler 的工作机制在多个线程并发更新 UI 时保证了线程安全</p>
 <h2 id="HOW"><a href="#HOW" class="headerlink" title="HOW"></a>HOW</h2><p><code>activity_main.xml</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span> <span class="attr">android:id</span>=<span class="string">"@+id/tvDetails"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">android:id</span>=<span class="string">"@+id/btnThread"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">android:id</span>=<span class="string">"@+id/btnInnerHandler"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">android:id</span>=<span class="string">"@+id/btnHandlerPost"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -174,21 +174,21 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#两种-Handler-消息传递的使用方式"><span class="toc-number">1.</span> <span class="toc-text">两种 Handler 消息传递的使用方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-number">1.1.</span> <span class="toc-text">WHAT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHEN"><span class="toc-number">1.2.</span> <span class="toc-text">WHEN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHY"><span class="toc-number">1.3.</span> <span class="toc-text">WHY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOW"><span class="toc-number">1.4.</span> <span class="toc-text">HOW</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Handler-sendMessage"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. Handler.sendMessage()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Handler-post"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. Handler.post()</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-number">1.</span> <span class="toc-text">WHAT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHEN"><span class="toc-number">2.</span> <span class="toc-text">WHEN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHY"><span class="toc-number">3.</span> <span class="toc-text">WHY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOW"><span class="toc-number">4.</span> <span class="toc-text">HOW</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Handler-sendMessage"><span class="toc-number">4.1.</span> <span class="toc-text">1. Handler.sendMessage()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Handler-post"><span class="toc-number">4.2.</span> <span class="toc-text">2. Handler.post()</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&text=两种Handler消息传递的使用方式"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种Handler消息传递的使用方式"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&is_video=false&description=两种Handler消息传递的使用方式"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=两种Handler消息传递的使用方式&body=Check out this article: http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种Handler消息传递的使用方式"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种Handler消息传递的使用方式"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种Handler消息传递的使用方式"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种Handler消息传递的使用方式"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&name=两种Handler消息传递的使用方式&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&text=两种 Handler 消息传递的使用方式"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&is_video=false&description=两种 Handler 消息传递的使用方式"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=两种 Handler 消息传递的使用方式&body=Check out this article: http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&name=两种 Handler 消息传递的使用方式&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
