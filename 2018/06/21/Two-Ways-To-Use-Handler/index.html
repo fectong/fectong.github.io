@@ -10,7 +10,7 @@
 <meta name="keywords" content="Android,Handler">
 <meta property="og:type" content="article">
 <meta property="og:title" content="两种 Handler 消息传递的使用方式">
-<meta property="og:url" content="http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/index.html">
 <meta property="og:site_name" content="Fe2Cu">
 <meta property="og:description" content="WHATHandler 是 Android 的一种消息传递机制( 异步通信 ) WHEN在多线程中进行耗时操作将获取到的信息传递给主线程( 即 UI 线程 )场景中, 使用 Handler 进行线程间的通信完成对 UI 线程的 UI 更新 WHYHandler 的工作机制在多个线程并发更新 UI 时保证了线程安全 HOWactivity_main.xml1234&amp;lt;TextView andro">
 <meta property="og:locale" content="en">
@@ -73,6 +73,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" href="/2018/06/23/Custom-View/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
         
         <li><a class="icon" href="/2018/06/21/hello-world/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
@@ -87,16 +89,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&text=两种 Handler 消息传递的使用方式"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&is_video=false&description=两种 Handler 消息传递的使用方式"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=两种 Handler 消息传递的使用方式&body=Check out this article: http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&name=两种 Handler 消息传递的使用方式&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&text=两种 Handler 消息传递的使用方式"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&is_video=false&description=两种 Handler 消息传递的使用方式"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=两种 Handler 消息传递的使用方式&body=Check out this article: http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&name=两种 Handler 消息传递的使用方式&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -179,16 +181,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&text=两种 Handler 消息传递的使用方式"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&is_video=false&description=两种 Handler 消息传递的使用方式"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=两种 Handler 消息传递的使用方式&body=Check out this article: http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/两种Handler消息传递的使用方式/&name=两种 Handler 消息传递的使用方式&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&text=两种 Handler 消息传递的使用方式"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&is_video=false&description=两种 Handler 消息传递的使用方式"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=两种 Handler 消息传递的使用方式&body=Check out this article: http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&name=两种 Handler 消息传递的使用方式&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
