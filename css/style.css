@@ -452,7 +452,7 @@ body {
   color: #383838;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Menlo", "Meslo LG", "Microsoft YaHei", monospace;
+  font-family: "Menlo", "Meslo LG", "Microsoft YaHei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   -moz-osx-font-smoothing: grayscale;

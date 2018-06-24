@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Fe2Cu">
 <meta property="og:description" content="WHATHandler 是 Android 的一种消息传递机制( 异步通信 ) WHEN在多线程中进行耗时操作将获取到的信息传递给主线程( 即 UI 线程 )场景中, 使用 Handler 进行线程间的通信完成对 UI 线程的 UI 更新 WHYHandler 的工作机制在多个线程并发更新 UI 时保证了线程安全 HOWactivity_main.xml1234&amp;lt;TextView andro">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-21T13:48:44.230Z">
+<meta property="og:updated_time" content="2018-06-24T03:17:08.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="两种 Handler 消息传递的使用方式">
 <meta name="twitter:description" content="WHATHandler 是 Android 的一种消息传递机制( 异步通信 ) WHEN在多线程中进行耗时操作将获取到的信息传递给主线程( 即 UI 线程 )场景中, 使用 Handler 进行线程间的通信完成对 UI 线程的 UI 更新 WHYHandler 的工作机制在多个线程并发更新 UI 时保证了线程安全 HOWactivity_main.xml1234&amp;lt;TextView andro">
@@ -61,11 +61,13 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">TAGS</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="https://github.com/fectung">Projects</a></li>
         
       </ul>
     </span>
@@ -89,16 +91,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&text=两种 Handler 消息传递的使用方式"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&is_video=false&description=两种 Handler 消息传递的使用方式"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&text=两种 Handler 消息传递的使用方式"><i class="fab fa-twitter " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&is_video=false&description=两种 Handler 消息传递的使用方式"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li> -->
   <li><a class="icon" href="mailto:?subject=两种 Handler 消息传递的使用方式&body=Check out this article: http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&name=两种 Handler 消息传递的使用方式&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-reddit " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-digg " aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&name=两种 Handler 消息传递的使用方式&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li> -->
 </ul>
 
     </div>
@@ -166,11 +168,13 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">TAGS</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="https://github.com/fectung">Projects</a></li>
         
       </ul>
     </div>
@@ -181,16 +185,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&text=两种 Handler 消息传递的使用方式"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&is_video=false&description=两种 Handler 消息传递的使用方式"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&text=两种 Handler 消息传递的使用方式"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&is_video=false&description=两种 Handler 消息传递的使用方式"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li> -->
   <li><a class="icon" href="mailto:?subject=两种 Handler 消息传递的使用方式&body=Check out this article: http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&name=两种 Handler 消息传递的使用方式&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <!-- <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&title=两种 Handler 消息传递的使用方式"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li> -->
+  <!-- <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/06/21/Two-Ways-To-Use-Handler/&name=两种 Handler 消息传递的使用方式&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li> -->
 </ul>
 
     </div>
@@ -216,11 +220,13 @@
          
           <li><a href="/">Home</a></li>
          
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">TAGS</a></li>
+         
           <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="https://github.com/fectung">Projects</a></li>
         
       </ul>
     </nav>
