@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Fe2Cu">
 <meta property="og:description" content="WHAT CR = Carriage Return 即 回车LF = Line Feed 即 换行    Windows 换行使用 CRLF, Linux 和 macOS 则使用 LF 进行换行这是一个历史遗留问题, 没有优劣之分 WHY在 Windows 下使用 Git 时经常会提示类似的 Warning : The file will have its original line ending">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-25T17:11:38.439Z">
+<meta property="og:updated_time" content="2018-06-25T17:14:43.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Warning : LF will be replaced by CRLF">
 <meta name="twitter:description" content="WHAT CR = Carriage Return 即 回车LF = Line Feed 即 换行    Windows 换行使用 CRLF, Linux 和 macOS 则使用 LF 进行换行这是一个历史遗留问题, 没有优劣之分 WHY在 Windows 下使用 Git 时经常会提示类似的 Warning : The file will have its original line ending">
@@ -103,7 +103,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-number">1.</span> <span class="toc-text">WHAT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHY"><span class="toc-number">2.</span> <span class="toc-text">WHY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOW"><span class="toc-number">3.</span> <span class="toc-text">HOW</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-number">1.</span> <span class="toc-text">WHAT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHY"><span class="toc-number">2.</span> <span class="toc-text">WHY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOW"><span class="toc-number">3.</span> <span class="toc-text">HOW</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-For-Windows"><span class="toc-number">3.1.</span> <span class="toc-text">1. For Windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-For-nix"><span class="toc-number">3.2.</span> <span class="toc-text">2. For *nix</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -151,10 +151,7 @@
 warning: LF will be replaced by CRLF in XXX.
 </code></pre><p>这个提示虽然对于使用 Git 没有影响, 但会输出很多无用信息</p>
 <h2 id="HOW"><a href="#HOW" class="headerlink" title="HOW"></a>HOW</h2><p>这个转换取决于 Git 中 <code>core.autocrlf</code> 的配置</p>
-<ol>
-<li>For Windows</li>
-</ol>
-<ul>
+<h3 id="1-For-Windows"><a href="#1-For-Windows" class="headerlink" title="1. For Windows"></a>1. For Windows</h3><ul>
 <li><p>关闭此功能</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure>
 </li>
@@ -162,10 +159,7 @@ warning: LF will be replaced by CRLF in XXX.
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果你的主要工作环境是 Windows 的话推荐使用此类方法</span><br><span class="line">git config --global core.autocrlf true</span><br><span class="line">git config --global core.safecrlf false</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol start="2">
-<li>For *nix</li>
-</ol>
-<ul>
+<h3 id="2-For-nix"><a href="#2-For-nix" class="headerlink" title="2. For *nix"></a>2. For *nix</h3><ul>
 <li><p>关闭此功能</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure>
 </li>
@@ -200,7 +194,7 @@ warning: LF will be replaced by CRLF in XXX.
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-number">1.</span> <span class="toc-text">WHAT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHY"><span class="toc-number">2.</span> <span class="toc-text">WHY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOW"><span class="toc-number">3.</span> <span class="toc-text">HOW</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WHAT"><span class="toc-number">1.</span> <span class="toc-text">WHAT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WHY"><span class="toc-number">2.</span> <span class="toc-text">WHY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HOW"><span class="toc-number">3.</span> <span class="toc-text">HOW</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-For-Windows"><span class="toc-number">3.1.</span> <span class="toc-text">1. For Windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-For-nix"><span class="toc-number">3.2.</span> <span class="toc-text">2. For *nix</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
