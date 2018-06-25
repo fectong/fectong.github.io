@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="WHAT CR = Carriage Return 即 回车LF = Line Feed 即 换行    Windows 换行使用 CRLF, Linux 和 macOS 则使用 LF 进行换行这是一个历史遗留问题, 没有优劣之分 WHY在 Windows 下使用 Git 时经常会提示类似的 Warning : The file will have its original line ending">
+    <meta name="description" content="WHAT CR = Carriage Return 即 回车LF = Line Feed 即 换行    Windows 换行使用 CRLF, Linux 和 macOS 则使用 LF 进行换行这是一个历史遗留问题, 没有优劣之分 WHY在 Windows 下使用 Git 时经常会提示类似的 Warning :12The file will have its original line endin">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Warning : LF will be replaced by CRLF">
 <meta property="og:url" content="http://yoursite.com/2018/06/26/Git-Warning-LF-will-be-replaced-by-CRLF/index.html">
 <meta property="og:site_name" content="Fe2Cu">
-<meta property="og:description" content="WHAT CR = Carriage Return 即 回车LF = Line Feed 即 换行    Windows 换行使用 CRLF, Linux 和 macOS 则使用 LF 进行换行这是一个历史遗留问题, 没有优劣之分 WHY在 Windows 下使用 Git 时经常会提示类似的 Warning : The file will have its original line ending">
+<meta property="og:description" content="WHAT CR = Carriage Return 即 回车LF = Line Feed 即 换行    Windows 换行使用 CRLF, Linux 和 macOS 则使用 LF 进行换行这是一个历史遗留问题, 没有优劣之分 WHY在 Windows 下使用 Git 时经常会提示类似的 Warning :12The file will have its original line endin">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-25T17:14:43.529Z">
+<meta property="og:updated_time" content="2018-06-25T17:16:04.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Warning : LF will be replaced by CRLF">
-<meta name="twitter:description" content="WHAT CR = Carriage Return 即 回车LF = Line Feed 即 换行    Windows 换行使用 CRLF, Linux 和 macOS 则使用 LF 进行换行这是一个历史遗留问题, 没有优劣之分 WHY在 Windows 下使用 Git 时经常会提示类似的 Warning : The file will have its original line ending">
+<meta name="twitter:description" content="WHAT CR = Carriage Return 即 回车LF = Line Feed 即 换行    Windows 换行使用 CRLF, Linux 和 macOS 则使用 LF 进行换行这是一个历史遗留问题, 没有优劣之分 WHY在 Windows 下使用 Git 时经常会提示类似的 Warning :12The file will have its original line endin">
     
     
         
@@ -146,10 +146,8 @@
 <p>CR = Carriage Return 即 <code>回车</code><br>LF = Line Feed 即 <code>换行</code>  </p>
 </blockquote>
 <p>Windows 换行使用 <code>CRLF</code>, Linux 和 macOS 则使用 <code>LF</code> 进行换行<br>这是一个历史遗留问题, 没有优劣之分</p>
-<h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><p>在 Windows 下使用 Git 时经常会提示类似的 <code>Warning</code> :</p>
-<pre><code>The file will have its original line endings in your working directory.
-warning: LF will be replaced by CRLF in XXX.
-</code></pre><p>这个提示虽然对于使用 Git 没有影响, 但会输出很多无用信息</p>
+<h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><p>在 Windows 下使用 Git 时经常会提示类似的 <code>Warning</code> :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line">warning: LF will be replaced by CRLF in XXX.</span><br></pre></td></tr></table></figure></p>
+<p>这个提示虽然对于使用 Git 没有影响, 但会输出很多无用信息</p>
 <h2 id="HOW"><a href="#HOW" class="headerlink" title="HOW"></a>HOW</h2><p>这个转换取决于 Git 中 <code>core.autocrlf</code> 的配置</p>
 <h3 id="1-For-Windows"><a href="#1-For-Windows" class="headerlink" title="1. For Windows"></a>1. For Windows</h3><ul>
 <li><p>关闭此功能</p>
