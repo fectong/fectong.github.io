@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Fe2Cu">
 <meta property="og:description" content="1. Java JDK  配置 JDK 环境变量 123456789101112改为自己电脑 JDK 的安装位置JAVA_HOME:  C:\Program Files\Java\jdk1.8.0_144JRE_HOME:  %JAVA_HOME%\jreCLASSPATH:  .;%JAVA_HOME%\lib;%JRE_HOME%\libPATH:  %JAVA_HOME%\bin  %JRE">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-25T16:24:04.938Z">
+<meta property="og:updated_time" content="2018-06-25T16:40:14.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Appium + Python 实机模拟单元测试">
 <meta name="twitter:description" content="1. Java JDK  配置 JDK 环境变量 123456789101112改为自己电脑 JDK 的安装位置JAVA_HOME:  C:\Program Files\Java\jdk1.8.0_144JRE_HOME:  %JAVA_HOME%\jreCLASSPATH:  .;%JAVA_HOME%\lib;%JRE_HOME%\libPATH:  %JAVA_HOME%\bin  %JRE">
@@ -209,21 +209,21 @@
 <h2 id="8-注意事项"><a href="#8-注意事项" class="headerlink" title="8. 注意事项"></a>8. 注意事项</h2><ul>
 <li><p>在处理<code>弹窗类</code>（比如弹窗输入密码, 选择打开方式）的事件时, 处理前可以有延时操作, 处理后在发出下一个与测试机交互的命令之前不要有任何延时操作, 加入延时可能会导致这个弹窗类的操作无效;</p>
 </li>
-<li><p>desired_caps 中的 <code>deviceName</code> 是必须配置的变量, 但是实际没有区别不同设备的作用(官方文档是这样解释的), 要想区分多台设备应该将 adb device 分配给 ‘udid’ 这个配置信息来区分不同的测试设备;</p>
+<li><p>desired_caps 中的 <code>deviceName</code> 是必须配置的变量, 但是实际没有区别不同设备的作用(官方文档是这样解释的);<br>要想区分多台设备应该将 adb device 分配给 ‘udid’ 这个配置信息来区分不同的测试设备;</p>
 </li>
 <li><p><code>unicodeKeyboard</code>, <code>resetKeyboard</code> 配置信息是在处理中文输入时出现的乱码问题的, 没有出现或者不需要中文输入没必要配置此信息;</p>
 </li>
-<li><p><code>noReset</code> 指的是每次启动应用先重置, 即清除存储和权限配置之类的, <code>fullReset</code> 指的是测试前把已有的APP卸载重新安装, 所以这个只适用于测试第三方APP的时候使用;</p>
+<li><p><code>noReset</code> 指的是每次启动应用先重置, 即清除存储和权限配置之类的;<br><code>fullReset</code> 指的是测试前把已有的APP卸载重新安装, 所以这个只适用于测试第三方APP的时候使用;</p>
 </li>
 <li><p><a href="./tools/utils.py">utils.py</a> 中有 <code>action</code> 和 <code>value</code> 两个方法:<br>value(element, value) 获取 element 的某个 value (值), 比如: text, tagName<br>action(element, action, keys = None) 让 element 进行某个 action (操作), 比如: click, clear, send_keys(keys)<br>这两个方法的目的是通过封装来处理此类操作中出现的异常, 防止其导致测试中断;</p>
 </li>
 <li><p>Python 是动态类型的语言, 所以在某个目录运行某个 py 文件时, 此处即为根目录, 所以在别的目录使用相对路径就会造成 <code>&quot;moudules not found&quot;</code> 之类的错误, 所以在 <a href="./tools/utils.py">utils.py</a> 中使用了 PATH 来获取 utils.py 的绝对路径, 其他 py 文件中则使用此 PATH 来完成相对路径的书写;</p>
 </li>
-<li><p><a href="./tools/utils.py">utils.py</a> 中使用 <code>logging.basicConfig</code> 配置了日志记录的信息, <code>level=logging.INFO</code> 则记录日志级别为 INFO 的 log 信息, 可修改为 DEBUG 或其他, <code>filename=PATH(&quot;../logs/&quot;+timestr+&quot;.log&quot;)</code> 为 log 的保存位置, 没有此项则默认打印输出在终端窗口;</p>
+<li><p><a href="./tools/utils.py">utils.py</a> 中使用 <code>logging.basicConfig</code> 配置了日志记录的信息;<br><code>level=logging.INFO</code> 则记录日志级别为 INFO 的 log 信息, 可修改为 DEBUG 或其他;<br><code>PATH(&quot;../logs/&quot;+timestr+&quot;.log&quot;)</code> 为 log 的保存位置, 没有此项则默认打印输出在终端窗口;</p>
 </li>
 <li><p><a href="./tools/utils.py">utils.py</a> 中 <code>wait_el_**</code> 此类方法为查找元素和查找后点击, 使用了 <code>WebDriverWait</code> 进行延时获取元素, 默认超时为 8s, 在 8s 内以 0.5s 为步进行查找, 超时后还未找到所需元素则怕抛出 TimeoutException, 提前找到则提前结束延时动作;</p>
 </li>
-<li><p><a href="./tools/utils.py">utils.py</a> 中 <code>MobileSwipe</code> 集成了常用滑动操作</p>
+<li><p><a href="./tools/utils.py">utils.py</a> 中 <code>MobileSwipe</code> 集成了常用滑动操作.</p>
 </li>
 </ul>
 
