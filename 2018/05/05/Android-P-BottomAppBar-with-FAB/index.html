@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Fe2Cu">
 <meta property="og:description" content="WHAT2018 年的 Google IO 上发布了 Material Design 2, 这里不谈 Material Design 的改变是否合理, 在发布的新 Material 控件中有 BottomAppBar 和 MaterialButton这俩值得注意的新控件 HOWbuild.gradle (Module: exmaterial2) 依赖添加:1implementation &quot;com.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-27T04:41:48.333Z">
+<meta property="og:updated_time" content="2018-06-27T09:39:24.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BottomAppBar + FloatActionBar + MaterialButton">
 <meta name="twitter:description" content="WHAT2018 年的 Google IO 上发布了 Material Design 2, 这里不谈 Material Design 的改变是否合理, 在发布的新 Material 控件中有 BottomAppBar 和 MaterialButton这俩值得注意的新控件 HOWbuild.gradle (Module: exmaterial2) 依赖添加:1implementation &quot;com.">
@@ -163,8 +163,8 @@
 </ul>
 <h3 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h3><p>布局文件中若控件 <code>MaterialButton</code> 没有配置:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:textAppearance="@style/TextAppearance.MaterialComponents.Button"</span><br></pre></td></tr></table></figure></p>
 <p>则会产生以下错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...  </span><br><span class="line">Caused by: android.view.InflateException: Binary XML file line #37: Binary XML file line #37: Error inflating class android.support.design.button.MaterialButton  </span><br><span class="line">Caused by: android.view.InflateException: Binary XML file line #37: Error inflating class android.support.design.button.MaterialButton  </span><br><span class="line">...  </span><br><span class="line">Caused by: java.lang.IllegalArgumentException: This component requires that you specify a valid android:textAppearance attribute.  </span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<h2 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h2><p>Java: <a href="https://github.com/fectong/ExAndroid/tree/master/exmaterail2" target="_blank" rel="noopener"><code>ExMaterail2</code></a></p>
-<p>Kotlin: <a href="https://github.com/fectong/ExAndroid/tree/master/exmaterail2k" target="_blank" rel="noopener"><code>ExMaterail2K</code></a></p>
+<h2 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h2><p>Java: <a href="https://github.com/fectong/ExAndroid/tree/master/exmaterial2" target="_blank" rel="noopener"><code>ExMaterail2</code></a></p>
+<p>Kotlin: <a href="https://github.com/fectong/ExAndroid/tree/master/exmaterial2k" target="_blank" rel="noopener"><code>ExMaterail2K</code></a></p>
 
   </div>
 </article>
