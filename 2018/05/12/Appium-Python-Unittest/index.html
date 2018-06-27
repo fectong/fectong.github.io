@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Fe2Cu">
 <meta property="og:description" content="1. Java JDK  配置 JDK 环境变量 123456789101112改为自己电脑 JDK 的安装位置JAVA_HOME:  C:\Program Files\Java\jdk1.8.0_144JRE_HOME:  %JAVA_HOME%\jreCLASSPATH:  .;%JAVA_HOME%\lib;%JRE_HOME%\libPATH:  %JAVA_HOME%\bin  %JRE">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-27T05:27:26.795Z">
+<meta property="og:updated_time" content="2018-06-27T05:36:16.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Appium + Python 实机模拟单元测试">
 <meta name="twitter:description" content="1. Java JDK  配置 JDK 环境变量 123456789101112改为自己电脑 JDK 的安装位置JAVA_HOME:  C:\Program Files\Java\jdk1.8.0_144JRE_HOME:  %JAVA_HOME%\jreCLASSPATH:  .;%JAVA_HOME%\lib;%JRE_HOME%\libPATH:  %JAVA_HOME%\bin  %JRE">
@@ -186,7 +186,7 @@
 </li>
 </ul>
 <h2 id="7-模板介绍"><a href="#7-模板介绍" class="headerlink" title="7. 模板介绍"></a>7. 模板介绍</h2><ul>
-<li><p>启动时配置的 WebDriver 在 <a href="https://github.com/fectong/AppiumPythonTest24/server/appium_server.py" target="_blank" rel="noopener">appium_server.py</a> 之中</p>
+<li><p>启动时配置的 WebDriver 在 <a href="https://github.com/fectong/AppiumPythonTest24/tree/master/server/appium_server.py" target="_blank" rel="noopener">appium_server.py</a> 之中</p>
 </li>
 <li><p>各测试按照测试应用进行分类, 处于 ./tests 目录</p>
 </li>
@@ -202,7 +202,7 @@
 <li><p>运行</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python ./test24.py</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a href="https://github.com/fectong/AppiumPythonTest24/tools/HTMLTestRunner.py" target="_blank" rel="noopener">HTMLTestRunner.py</a> 文件说明:</p>
+<li><p><a href="https://github.com/fectong/AppiumPythonTest24/tree/master/tools/HTMLTestRunner.py" target="_blank" rel="noopener">HTMLTestRunner.py</a> 文件说明:</p>
 <p>原版 <a href="https://pypi.python.org/pypi/HTMLTestRunner" target="_blank" rel="noopener">路径</a>, 原版不支持 Python3.X, 项目中所用的是修改后的版本, 并使用 <a href="http://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a> 修改了配色和样式</p>
 </li>
 </ul>
@@ -215,15 +215,15 @@
 </li>
 <li><p><code>noReset</code> 指的是每次启动应用先重置, 即清除存储和权限配置之类的;<br><code>fullReset</code> 指的是测试前把已有的APP卸载重新安装, 所以这个只适用于测试第三方APP的时候使用;</p>
 </li>
-<li><p><a href="https://github.com/fectong/AppiumPythonTest24/tools/utils.py" target="_blank" rel="noopener">utils.py</a> 中有 <code>action</code> 和 <code>value</code> 两个方法:<br>value(element, value) 获取 element 的某个 value (值), 比如: text, tagName<br>action(element, action, keys = None) 让 element 进行某个 action (操作), 比如: click, clear, send_keys(keys)<br>这两个方法的目的是通过封装来处理此类操作中出现的异常, 防止其导致测试中断;</p>
+<li><p><a href="https://github.com/fectong/AppiumPythonTest24/tree/master/tools/utils.py" target="_blank" rel="noopener">utils.py</a> 中有 <code>action</code> 和 <code>value</code> 两个方法:<br>value(element, value) 获取 element 的某个 value (值), 比如: text, tagName<br>action(element, action, keys = None) 让 element 进行某个 action (操作), 比如: click, clear, send_keys(keys)<br>这两个方法的目的是通过封装来处理此类操作中出现的异常, 防止其导致测试中断;</p>
 </li>
-<li><p>Python 是动态类型的语言, 所以在某个目录运行某个 py 文件时, 此处即为根目录, 所以在别的目录使用相对路径就会造成 <code>&quot;moudules not found&quot;</code> 之类的错误, 所以在 <a href="https://github.com/fectong/AppiumPythonTest24/tools/utils.py" target="_blank" rel="noopener">utils.py</a> 中使用了 PATH 来获取 utils.py 的绝对路径, 其他 py 文件中则使用此 PATH 来完成相对路径的书写;</p>
+<li><p>Python 是动态类型的语言, 所以在某个目录运行某个 py 文件时, 此处即为根目录, 所以在别的目录使用相对路径就会造成 <code>&quot;moudules not found&quot;</code> 之类的错误, 所以在 <a href="https://github.com/fectong/AppiumPythonTest24/tree/master/tools/utils.py" target="_blank" rel="noopener">utils.py</a> 中使用了 PATH 来获取 utils.py 的绝对路径, 其他 py 文件中则使用此 PATH 来完成相对路径的书写;</p>
 </li>
-<li><p><a href="https://github.com/fectong/AppiumPythonTest24/tools/utils.py" target="_blank" rel="noopener">utils.py</a> 中使用 <code>logging.basicConfig</code> 配置了日志记录的信息;<br><code>level=logging.INFO</code> 则记录日志级别为 INFO 的 log 信息, 可修改为 DEBUG 或其他;<br><code>PATH(&quot;../logs/&quot;+timestr+&quot;.log&quot;)</code> 为 log 的保存位置, 没有此项则默认打印输出在终端窗口;</p>
+<li><p><a href="https://github.com/fectong/AppiumPythonTest24/tree/master/tools/utils.py" target="_blank" rel="noopener">utils.py</a> 中使用 <code>logging.basicConfig</code> 配置了日志记录的信息;<br><code>level=logging.INFO</code> 则记录日志级别为 INFO 的 log 信息, 可修改为 DEBUG 或其他;<br><code>PATH(&quot;../logs/&quot;+timestr+&quot;.log&quot;)</code> 为 log 的保存位置, 没有此项则默认打印输出在终端窗口;</p>
 </li>
-<li><p><a href="https://github.com/fectong/AppiumPythonTest24/tools/utils.py" target="_blank" rel="noopener">utils.py</a> 中 <code>wait_el_**</code> 此类方法为查找元素和查找后点击, 使用了 <code>WebDriverWait</code> 进行延时获取元素, 默认超时为 8s, 在 8s 内以 0.5s 为步进行查找, 超时后还未找到所需元素则怕抛出 TimeoutException, 提前找到则提前结束延时动作;</p>
+<li><p><a href="https://github.com/fectong/AppiumPythonTest24/tree/master/tools/utils.py" target="_blank" rel="noopener">utils.py</a> 中 <code>wait_el_**</code> 此类方法为查找元素和查找后点击, 使用了 <code>WebDriverWait</code> 进行延时获取元素, 默认超时为 8s, 在 8s 内以 0.5s 为步进行查找, 超时后还未找到所需元素则怕抛出 TimeoutException, 提前找到则提前结束延时动作;</p>
 </li>
-<li><p><a href="https://github.com/fectong/AppiumPythonTest24/tools/utils.py" target="_blank" rel="noopener">utils.py</a> 中 <code>MobileSwipe</code> 集成了常用滑动操作.</p>
+<li><p><a href="https://github.com/fectong/AppiumPythonTest24/tree/master/tools/utils.py" target="_blank" rel="noopener">utils.py</a> 中 <code>MobileSwipe</code> 集成了常用滑动操作.</p>
 </li>
 </ul>
 <h2 id="9-Source-Code"><a href="#9-Source-Code" class="headerlink" title="9. Source Code"></a>9. Source Code</h2><p><a href="https://github.com/fectong/AppiumPythonTest24" target="_blank" rel="noopener">AppiumPythonTest24</a></p>
